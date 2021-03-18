@@ -9,16 +9,16 @@ const std = @import("std");
 
 const NumError = error{IllegalNumber};
 
-pub fn main() void {
+pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
 
     const my_num: NumError!u32 = getNumber();
 
     if (my_num) |num| {
-        stdout.print("my_num={}\n", .{num});
+        try stdout.print("my_num={}\n", .{num});
     }
     else |err|{
-        stdout.print("Error!\n", .{});
+        try stdout.print("Error!\n", .{});
     }
 }
 
