@@ -5,7 +5,9 @@
 //
 //     const Stuff = enum(u8){ foo = 16 };
 //
-// You can get the integer out with a built-in function:
+// You can get the integer out with a builtin function,
+// @enumToInt(). We'll learn about builtins properly in a later
+// exercise.
 //
 //     var my_stuff: u8 = @enumToInt(Stuff.foo);
 //
@@ -53,6 +55,7 @@ pub fn main() void {
         \\  <span style="color: #{x:0>6}">Green</span>
         \\  <span style="color: #{x:0>6}">Blue</span>
         \\</p>
+        \\
     , .{
         @enumToInt(Color.red),
         @enumToInt(Color.green),
